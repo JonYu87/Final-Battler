@@ -1,1 +1,11 @@
+#field {
+  height: 500px;
+  width: 800px;
+  border: 1px solid black;
+  background: blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
+}

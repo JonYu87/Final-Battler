@@ -1,13 +1,17 @@
 import "./styles/index.scss";
-import _ from 'lodash';
 
-function component() {
-  const element = document.createElement('div');
+const canvas = document.getElementById("field");
+const ctx = canvas.getContext("2d");
+canvas.width = 800;
+canvas.height = 500;
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const background = new Image();
+background.src = "background.gif";
 
-  return element;
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  requestAnimationFrame(animate);
 }
 
-document.body.appendChild(component());
+animate();
