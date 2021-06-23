@@ -18,16 +18,31 @@
 .battle-menu-container{
   position: absolute;
   width: 100%;
-  display: flex;
-  justify-content: center;
   border-radius: 30px;
   border: 1px solid white;
   right: 327px; 
   bottom: -30px;
   height: 180px; 
-  width: 800px;
+  width: 798px;
   background: blue;
   color: white;
   z-index: 2;
+};
 
+.hp-border{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 4px;
 }
+
+.hp-bar{
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  height: 20px;
+  background-color: greenyellow;
+  border: 2px solid white;
+};
