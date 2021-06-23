@@ -1,4 +1,7 @@
-
+.main-page{
+  height: 100%;
+  width: 100%;
+}
 
 #field {
   width: 800px;
@@ -13,9 +16,12 @@
 };
 
 .battle-menu-container{
+  position: absolute;
+  width: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
+  right: 70px; 
+  bottom: 10px; 
   width: 800px;
   background: blue;
   color: white;
