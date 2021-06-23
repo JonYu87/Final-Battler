@@ -1,4 +1,6 @@
 import "./styles/index.scss";
+import "./utils/player"
+import "./utils/boss"
 
 const canvas = document.getElementById("field");
 const ctx = canvas.getContext("2d");
@@ -41,3 +43,4 @@ function animate() {
 }
 
 animate();
+
