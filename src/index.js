@@ -1,6 +1,7 @@
 import "./styles/index.scss";
 import Player from "./utils/player"
 import Boss from "./utils/boss"
+window.attack = attack
 
 const battleMenu = document.getElementById("battleMenu")
 const attackBtnContainer = document.getElementById("attackBtnContainer")
@@ -34,13 +35,15 @@ function animate() {
 animate();
 
 
-function resetPlayer(){
+function resetPlayer() {
   player.x = 700;
 }
 //attack 
 function attack() {
-  player.x = 600
-  resetPlayer();
+  player.x = 600;
+  console.log("player has attacked")
+  setTimeout(resetPlayer, 700);
+  console.log("player has moved back")
 };
 
 
