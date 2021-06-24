@@ -49,7 +49,18 @@ function attack() {
   let hitChance = Math.round(Math.random() *10);
   if (hitChance >= 3) {
     let dmg = Math.round(Math.random()*10) + player.dmg;
-    console.log(dmg)
+    //append div?
+    let text = document.createElement('div')
+    let body = document.querySelector('body')
+    text.classList.add("dmg-text")
+    text.append(`You did ${dmg} dmg to the boss`)
+    body.append(text);
+    setTimeout(() => {
+      text.remove();
+    }, 2000);
+    // console.log(`You did ${dmg} dmg to the boss`)
+    boss.hp -= dmg;
+    console.log(`The boss has ${boss.hp} hp!`)
   }
   setTimeout(resetPlayer, 700);
 };
