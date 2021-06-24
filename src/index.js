@@ -3,6 +3,7 @@ import Player from "./utils/player"
 import Boss from "./utils/boss"
 window.attack = attack
 
+
 // const battleMenu = document.getElementById("battleMenu")
 // const attackBtnContainer = document.getElementById("attackBtnContainer")
 // const attackBtn = document.getElementById("attackBtnContainer")
@@ -45,6 +46,11 @@ function resetPlayer() {
 function attack() {
   player.x = 600;
   attackAudio.play();
+  let hitChance = Math.round(Math.random() *10);
+  if (hitChance >= 3) {
+    let dmg = Math.round(Math.random()*10) + player.dmg;
+    console.log(dmg)
+  }
   setTimeout(resetPlayer, 700);
 };
 

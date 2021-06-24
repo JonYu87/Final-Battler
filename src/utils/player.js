@@ -5,7 +5,8 @@ class Player {
     this.width = 32,
     this.height = 48,
     this.hp = 999,
-    this.mp = 999
+    this.mp = 999,
+    this.dmg = 50
   }
 };
 
