@@ -1,29 +1,18 @@
 import "./styles/index.scss";
-import "./utils/player"
-import "./utils/boss"
+import Player from "./utils/player"
+import Boss from "./utils/boss"
 
+const battleMenu = document.getElementById("battleMenu")
+const attackBtnContainer = document.getElementById("attackBtnContainer")
+const attackBtn = document.getElementById("attackBtnContainer")
 const canvas = document.getElementById("field");
 const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 600;
 
-const boss = {
-  x: 100,
-  y: 150,
-  width: 240,
-  height: 256,
-  hp: 3000,
-  mp: 9999
-};
+const boss = new Boss();
 
-const player = {
-  x: 700,
-  y: 200,
-  width: 32,
-  height: 48,
-  hp: 999,
-  mp: 999
-};
+const player = new Player();
 
 const bossSprite = new Image();
 bossSprite.src = "boss.gif"
@@ -43,4 +32,15 @@ function animate() {
 }
 
 animate();
+
+
+function resetPlayer(){
+  player.x = 700;
+}
+//attack 
+function attack() {
+  player.x = 600
+  resetPlayer();
+};
+
 
