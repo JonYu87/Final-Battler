@@ -3,9 +3,9 @@ import Player from "./utils/player"
 import Boss from "./utils/boss"
 window.attack = attack
 
-const battleMenu = document.getElementById("battleMenu")
-const attackBtnContainer = document.getElementById("attackBtnContainer")
-const attackBtn = document.getElementById("attackBtnContainer")
+// const battleMenu = document.getElementById("battleMenu")
+// const attackBtnContainer = document.getElementById("attackBtnContainer")
+// const attackBtn = document.getElementById("attackBtnContainer")
 const canvas = document.getElementById("field");
 const ctx = canvas.getContext("2d");
 canvas.width = 800;
@@ -16,13 +16,16 @@ const boss = new Boss();
 const player = new Player();
 
 const bossSprite = new Image();
-bossSprite.src = "boss.gif"
+bossSprite.src = "./src/utils/assets/boss.gif"
 
 const background = new Image();
-background.src = "background.gif";
+background.src = "./src/utils/assets/background.gif";
 
 const playerSprite = new Image();
-playerSprite.src = "cecil.gif"
+playerSprite.src = "./src/utils/assets/cecil.gif"
+
+const attackAudio = new Audio();
+attackAudio.src = "./src/utils/assets/attack.mp3"
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -41,9 +44,8 @@ function resetPlayer() {
 //attack 
 function attack() {
   player.x = 600;
-  console.log("player has attacked")
+  attackAudio.play();
   setTimeout(resetPlayer, 700);
-  console.log("player has moved back")
 };
 
 
