@@ -1,11 +1,16 @@
-.dmg-text{
+.dmg-text {
   color: white;
   background: blue;
+  border: 1px solid white;
+  text-align: center;
   z-index: 2;
   position: relative;
+  border-radius: 5px;
+  width: 800px;
+  left: 318px;
 }
 
-.main-page{
+.main-page {
   height: 100%;
   width: 100%;
   background-color: black;
@@ -21,23 +26,23 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-};
+}
 
-#battleMenu{
+#battleMenu {
   position: absolute;
   width: 100%;
   border-radius: 20px;
   border: 1px solid white;
-  right: 327px; 
+  right: 327px;
   bottom: -30px;
-  height: 180px; 
+  height: 180px;
   width: 798px;
   background: blue;
   color: white;
   z-index: 2;
-};
+}
 
-.hp-border{
+.hp-border {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -46,11 +51,11 @@
   border-radius: 4px;
 }
 
-.hp-bar{
+.hp-bar {
   display: flex;
   flex-direction: row;
   width: 200px;
   height: 20px;
   background-color: greenyellow;
   border: 2px solid white;
-};
+}
