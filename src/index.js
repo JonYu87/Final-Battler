@@ -2,6 +2,7 @@ import "./styles/index.scss";
 import Player from "./utils/player";
 import Boss from "./utils/boss";
 window.attack = attack;
+window.togglePlay = togglePlay;
 
 // const battleMenu = document.getElementById("battleMenu")
 // const attackBtnContainer = document.getElementById("attackBtnContainer")
@@ -31,6 +32,11 @@ const deadTerra = {
 
 const battleTheme = document.getElementById('theme-music')
 
+
+function togglePlay() {
+  return battleTheme.paused ? battleTheme.play() : battleTheme.pause();
+};
+
 const bossSprite = new Image();
 bossSprite.src = "./src/utils/assets/boss.gif";
 
@@ -51,9 +57,6 @@ attackAudio.src = "./src/utils/assets/attack.mp3";
 
 const bossAttAudio = new Audio();
 bossAttAudio.src = "./src/utils/assets/boss.mp3";
-
-battleTheme.play();
-battleTheme.volume = 0.3
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -107,4 +110,4 @@ function attack() {
     boss.attack();
     bossAttAudio.play();
   }, 2000);
-}
+};
