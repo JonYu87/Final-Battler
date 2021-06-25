@@ -19,15 +19,17 @@ const deadFrog = {
   x: 700,
   y: 300,
   width: 50,
-  height: 28
+  height: 28,
 };
 
 const deadTerra = {
   x: 700,
   y: 380,
   width: 48,
-  height: 32
+  height: 32,
 };
+
+const battleTheme = document.getElementById('theme-music')
 
 const bossSprite = new Image();
 bossSprite.src = "./src/utils/assets/boss.gif";
@@ -39,24 +41,39 @@ const playerSprite = new Image();
 playerSprite.src = "./src/utils/assets/Crono.gif";
 
 const deadSprite1 = new Image();
-deadSprite1.src = "./src/utils/assets/Frog.gif"
+deadSprite1.src = "./src/utils/assets/Frog.gif";
 
 const deadSprite2 = new Image();
-deadSprite2.src = "./src/utils/assets/Terra.gif"
+deadSprite2.src = "./src/utils/assets/Terra.gif";
 
 const attackAudio = new Audio();
 attackAudio.src = "./src/utils/assets/attack.mp3";
 
 const bossAttAudio = new Audio();
-bossAttAudio.src ="./src/utils/assets/boss.mp3"
+bossAttAudio.src = "./src/utils/assets/boss.mp3";
+
+battleTheme.play();
+battleTheme.volume = 0.3
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
   ctx.drawImage(bossSprite, boss.x, boss.y, boss.width, boss.height);
   ctx.drawImage(playerSprite, player.x, player.y, player.width, player.height);
-  ctx.drawImage(deadSprite1, deadFrog.x, deadFrog.y, deadFrog.width, deadFrog.height);
-  ctx.drawImage(deadSprite2, deadTerra.x, deadTerra.y, deadTerra.width, deadTerra.height);
+  ctx.drawImage(
+    deadSprite1,
+    deadFrog.x,
+    deadFrog.y,
+    deadFrog.width,
+    deadFrog.height
+  );
+  ctx.drawImage(
+    deadSprite2,
+    deadTerra.x,
+    deadTerra.y,
+    deadTerra.width,
+    deadTerra.height
+  );
   requestAnimationFrame(animate);
 }
 
