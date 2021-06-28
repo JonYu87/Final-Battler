@@ -7,6 +7,7 @@ window.togglePlay = togglePlay;
 // const battleMenu = document.getElementById("battleMenu")
 // const attackBtnContainer = document.getElementById("attackBtnContainer")
 // const attackBtn = document.getElementById("attackBtnContainer")
+
 const canvas = document.getElementById("field");
 const ctx = canvas.getContext("2d");
 canvas.width = 800;
@@ -58,6 +59,7 @@ attackAudio.src = "./src/utils/assets/attack.mp3";
 const bossAttAudio = new Audio();
 bossAttAudio.src = "./src/utils/assets/boss.mp3";
 
+document.addEventListener('DOMContentLoaded', (event) => {
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
@@ -81,6 +83,7 @@ function animate() {
 }
 
 animate();
+});
 
 function resetPlayer() {
   player.x = 700;
