@@ -30,12 +30,12 @@ const deadTerra = {
   height: 32,
 };
 
-const battleTheme = document.getElementById('theme-music')
-
+let battleTheme = document.getElementById("theme-music");
+battleTheme.volume = 0.1;
 
 function togglePlay() {
   return battleTheme.paused ? battleTheme.play() : battleTheme.pause();
-};
+}
 
 const bossSprite = new Image();
 bossSprite.src = "./src/utils/assets/boss.gif";
@@ -90,7 +90,7 @@ function attack() {
   player.x = 600;
   attackAudio.play();
   let hitChance = Math.round(Math.random() * 10);
-  if (hitChance >= 3) {
+  if (hitChance >= 4) {
     let dmg = Math.round(Math.random() * 10) + player.dmg;
     //append div?
     boss.hp -= dmg;
@@ -110,4 +110,4 @@ function attack() {
     boss.attack();
     bossAttAudio.play();
   }, 2000);
-};
+}
