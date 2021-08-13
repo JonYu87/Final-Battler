@@ -31,13 +31,14 @@
 
 #battleMenu {
   position: absolute;
-  width: 100%;
   border-radius: 20px;
   border: 1px solid white;
-  right: 327px;
-  bottom: -20px;
-  height: 170px;
-  width: 798px;
+  display: flex;
+  justify-content: space-between;
+  top: 65%;
+  left: 23%;
+  height: 180px;
+  width: 810px;
   background: blue;
   color: white;
   z-index: 2;

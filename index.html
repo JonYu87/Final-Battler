@@ -10,18 +10,21 @@
 </head>
 
 <body class="main-page">
-  <canvas id="field"></canvas>
-  <a onClick="togglePlay()">
-    <button>music button placeholder</button>
-  </a>
-  <audio id="theme-music" src="./src/utils/assets/battleTheme.mp3" type="audio/mpeg" autoplay"></audio>
-  <script src="./dist/main.js"></script>
-  <div id="battleMenu">
-    <div id="attackBtnContainer">
+  <div class="game-container">
+
+    <canvas id="field"></canvas>
+    <a onClick="togglePlay()">
+      <button>Play battle theme</button>
+    </a>
+    <audio id="theme-music" src="./src/utils/assets/battleTheme.mp3" type="audio/mpeg" autoplay"></audio>
+    <script src="./dist/main.js"></script>
+    <div id="battleMenu">
+      <div id="attackBtnContainer">
         <button id="attackBtn" onclick="attack()">Attack</button>
-    </div>
-    <div class="hp-border">
-      <div class="hp-bar">HP</div>
+      </div>
+      <div class="hp-border">
+        <div class="hp-bar">HP</div>
+      </div>
     </div>
   </div>
 
