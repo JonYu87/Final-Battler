@@ -107,7 +107,18 @@ function attack() {
     let body = document.querySelector("body");
     text.classList.add("dmg-text");
     text.append(
-      `You dealt ${dmg} dmg to the boss, the boss now has ${boss.hp} hp! `
+      `You dealt ${dmg} dmg to Recursion, Recursion now has ${boss.hp} hp! `
+    );
+    body.append(text);
+    setTimeout(() => {
+      text.remove();
+    }, 2000);
+  } else {
+    let text = document.createElement("div");
+    let body = document.querySelector("body");
+    text.classList.add("miss-text");
+    text.append(
+      `You missed! You dealt 0 dmg to the boss, the boss now has ${boss.hp} hp! `
     );
     body.append(text);
     setTimeout(() => {
@@ -116,7 +127,7 @@ function attack() {
   }
   setTimeout(resetPlayer, 700);
   setTimeout(() => {
-    boss.attack();
+    boss.attack(player);
     bossAttAudio.play();
   }, 2000);
 }

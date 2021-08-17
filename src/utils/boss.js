@@ -1,3 +1,5 @@
+import Player from "./player";
+
 class Boss {
   constructor(props) {
     (this.x = 100),
@@ -14,11 +16,33 @@ class Boss {
     this.x = 100;
   }
 
-  attack() {
+  attack(player) {
     this.x = 200;
     let hitChance = Math.round(Math.random() * 10);
     if (hitChance >= 3) {
-      let dmg = Math.random(Math.random() * 10) + this.dmg;
+      let dmg = Math.round(Math.random() * 10) + this.dmg;
+      player.hp -= dmg;
+      let text = document.createElement("div");
+      let body = document.querySelector("body");
+      text.classList.add("boss-dmg-text");
+      text.append(
+        `Recursion dealt ${dmg} to you, you have ${player.hp} hp remaining!`
+      );
+      body.append(text);
+      setTimeout(() => {
+        text.remove();
+      }, 2000);
+    } else {
+      let text = document.createElement("div");
+      let body = document.querySelector("body");
+      text.classList.add("boss-miss-text");
+      text.append(
+        `Recursion missed! You have ${player.hp} hp remaining!`
+      );
+      body.append(text);
+      setTimeout(() => {
+        text.remove();
+      }, 2000);
     }
     setTimeout(this.reset, 700);
   }
