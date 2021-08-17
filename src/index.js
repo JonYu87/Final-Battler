@@ -41,13 +41,40 @@ let jenovaAbsolute = document.getElementById("theme-music-3");
 jenovaAbsolute.volume = 0.1;
 
 function togglePlay() {
-  return battleTheme.paused ? battleTheme.play() : battleTheme.pause();
+  if (battleTheme.paused) {
+    battleTheme.play();
+    fightOn.currentTime = 0;
+    fightOn.pause();
+    jenovaAbsolute.currentTime = 0;
+    jenovaAbsolute.pause();
+  } else {
+    battleTheme.currentTime = 0;
+    battleTheme.pause();
+  }
 }
 function togglePlaySecond() {
-  return fightOn.paused ? fightOn.play() : fightOn.pause();
+  if (fightOn.paused) {
+    fightOn.play();
+    battleTheme.currentTime = 0;
+    battleTheme.pause();
+    jenovaAbsolute.currentTime = 0;
+    jenovaAbsolute.pause();
+  } else {
+    fightOn.currentTime = 0;
+    fightOn.pause();
+  }
 }
 function togglePlayThird() {
-  return jenovaAbsolute.paused ? jenovaAbsolute.play() : jenovaAbsolute.pause();
+  if (jenovaAbsolute.paused) {
+    jenovaAbsolute.play();
+    battleTheme.currentTime = 0;
+    battleTheme.pause();
+    fightOn.currentTime = 0;
+    fightOn.pause();
+  } else {
+    jenovaAbsolute.currentTime = 0;
+    jenovaAbsolute.pause();
+  }
 }
 
 const bossSprite = new Image();
