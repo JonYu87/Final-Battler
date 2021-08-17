@@ -4,10 +4,11 @@
   border: 1px solid white;
   text-align: center;
   z-index: 2;
-  position: relative;
+  position: absolute;
   border-radius: 5px;
-  width: 780px;
-  left: 325px;
+  width: 800px;
+  left: 21%;
+  top: 25%;
 }
 .miss-text {
   color: white;
@@ -15,10 +16,11 @@
   border: 1px solid white;
   text-align: center;
   z-index: 2;
-  position: relative;
+  position: absolute;
   border-radius: 5px;
-  width: 780px;
-  left: 325px;
+  width: 800px;
+  left: 21%;
+  top: 25%;
 }
 .boss-dmg-text {
   color: white;
@@ -26,10 +28,11 @@
   border: 1px solid white;
   text-align: center;
   z-index: 2;
-  position: relative;
+  position: absolute;
   border-radius: 5px;
-  width: 780px;
-  left: 325px;
+  width: 800px;
+  left: 21%;
+  top: 25%;
 }
 .boss-miss-text {
   color: white;
@@ -37,10 +40,11 @@
   border: 1px solid white;
   text-align: center;
   z-index: 2;
-  position: relative;
+  position: absolute;
   border-radius: 5px;
-  width: 780px;
-  left: 325px;
+  width: 800px;
+  left: 21%;
+  top: 25%;
 }
 
 .main-page {
@@ -67,8 +71,8 @@
   border: 1px solid white;
   display: flex;
   justify-content: space-between;
-  top: 65%;
-  left: 23%;
+  top: 62%;
+  left: 21%;
   height: 180px;
   width: 810px;
   background: blue;
