@@ -14,15 +14,17 @@
 
     <canvas id="field"></canvas>
     <a onClick="togglePlay()">
-      <button>FF7 Battle Theme</button>
+      <button>Battle Theme</button>
     </a>
-    <a onClick="togglePlay()">
-      <button>FF7 Battle Theme</button>
+    <a onClick="togglePlaySecond()">
+      <button>Fight On!</button>
     </a>
-    <a onClick="togglePlay()">
-      <button>FF7 Battle Theme</button>
+    <a onClick="togglePlayThird()">
+      <button>Jenova Absolute</button>
     </a>
-    <audio id="theme-music" src="./src/utils/assets/battleTheme.mp3" type="audio/mpeg" autoplay"></audio>
+    <audio id="theme-music-1" src="./src/utils/assets/battleTheme.mp3" type="audio/mpeg" autoplay"></audio>
+    <audio id="theme-music-2" src="./src/utils/assets/fightOn.mp3" type="audio/mpeg" autoplay"></audio>
+    <audio id="theme-music-3" src="./src/utils/assets/jenovaAbsolute.mp3" type="audio/mpeg" autoplay"></audio>
     <script src="./dist/main.js"></script>
     <div id="battleMenu">
       <div id="attackBtnContainer">

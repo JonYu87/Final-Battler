@@ -3,6 +3,8 @@ import Player from "./utils/player";
 import Boss from "./utils/boss";
 window.attack = attack;
 window.togglePlay = togglePlay;
+window.togglePlaySecond = togglePlaySecond;
+window.togglePlayThird = togglePlayThird;
 
 // const battleMenu = document.getElementById("battleMenu")
 // const attackBtnContainer = document.getElementById("attackBtnContainer")
@@ -31,17 +33,21 @@ const deadTerra = {
   height: 32,
 };
 
-let battleTheme = document.getElementById("theme-music");
+let battleTheme = document.getElementById("theme-music-1");
 battleTheme.volume = 0.1;
+let fightOn = document.getElementById("theme-music-2");
+fightOn.volume = 0.1;
+let jenovaAbsolute = document.getElementById("theme-music-3");
+jenovaAbsolute.volume = 0.1;
 
 function togglePlay() {
   return battleTheme.paused ? battleTheme.play() : battleTheme.pause();
 }
 function togglePlaySecond() {
-  return battleTheme.paused ? battleTheme.play() : battleTheme.pause();
+  return fightOn.paused ? fightOn.play() : fightOn.pause();
 }
 function togglePlayThird() {
-  return battleTheme.paused ? battleTheme.play() : battleTheme.pause();
+  return jenovaAbsolute.paused ? jenovaAbsolute.play() : jenovaAbsolute.pause();
 }
 
 const bossSprite = new Image();
@@ -65,30 +71,36 @@ attackAudio.src = "./src/utils/assets/attack.mp3";
 const bossAttAudio = new Audio();
 bossAttAudio.src = "./src/utils/assets/boss.mp3";
 
-document.addEventListener('DOMContentLoaded', (event) => {
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-  ctx.drawImage(bossSprite, boss.x, boss.y, boss.width, boss.height);
-  ctx.drawImage(playerSprite, player.x, player.y, player.width, player.height);
-  ctx.drawImage(
-    deadSprite1,
-    deadFrog.x,
-    deadFrog.y,
-    deadFrog.width,
-    deadFrog.height
-  );
-  ctx.drawImage(
-    deadSprite2,
-    deadTerra.x,
-    deadTerra.y,
-    deadTerra.width,
-    deadTerra.height
-  );
-  requestAnimationFrame(animate);
-}
+document.addEventListener("DOMContentLoaded", (event) => {
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(bossSprite, boss.x, boss.y, boss.width, boss.height);
+    ctx.drawImage(
+      playerSprite,
+      player.x,
+      player.y,
+      player.width,
+      player.height
+    );
+    ctx.drawImage(
+      deadSprite1,
+      deadFrog.x,
+      deadFrog.y,
+      deadFrog.width,
+      deadFrog.height
+    );
+    ctx.drawImage(
+      deadSprite2,
+      deadTerra.x,
+      deadTerra.y,
+      deadTerra.width,
+      deadTerra.height
+    );
+    requestAnimationFrame(animate);
+  }
 
-animate();
+  animate();
 });
 
 function resetPlayer() {
