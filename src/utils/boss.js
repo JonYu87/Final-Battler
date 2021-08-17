@@ -1,4 +1,6 @@
 import Player from "./player";
+import loseGameOver from "../index";
+import winGameOver from "../index";
 
 class Boss {
   constructor(props) {
@@ -8,7 +10,7 @@ class Boss {
       (this.height = 256),
       (this.hp = 100),
       (this.mp = 9999),
-      (this.dmg = 12);
+      (this.dmg = 11);
     this.reset = this.reset.bind(this);
   }
 

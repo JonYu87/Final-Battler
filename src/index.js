@@ -191,6 +191,12 @@ function loseGameOver() {
   text.classList.add("game-over");
   text.append(`Game Over! You have ${player.hp} hp left! `);
   body.append(text);
+  battleTheme.currentTime = 0;
+  battleTheme.pause();
+  fightOn.currentTime = 0;
+  fightOn.pause();
+  jenovaAbsolute.currentTime = 0;
+  jenovaAbsolute.pause();
   lossAudio.play();
   const button = document.querySelectorAll("button");
   button.disabled = true;
@@ -201,5 +207,11 @@ function winGameOver() {
   text.classList.add("game-over");
   text.append(`You have defeated Recursion!`);
   body.append(text);
+  battleTheme.currentTime = 0;
+  battleTheme.pause();
+  fightOn.currentTime = 0;
+  fightOn.pause();
+  jenovaAbsolute.currentTime = 0;
+  jenovaAbsolute.pause();
   victoryAudio.play();
 }
