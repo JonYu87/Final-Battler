@@ -4,9 +4,9 @@ class Player {
     this.y = 200,
     this.width = 62,
     this.height = 62,
-    this.hp = 999,
+    this.hp = 100,
     this.mp = 999,
-    this.dmg = 50
+    this.dmg = 10
   }
 };
 

@@ -6,9 +6,9 @@ class Boss {
       (this.y = 150),
       (this.width = 240),
       (this.height = 256),
-      (this.hp = 3000),
+      (this.hp = 300),
       (this.mp = 9999),
-      (this.dmg = 50);
+      (this.dmg = 20);
     this.reset = this.reset.bind(this);
   }
 
@@ -22,6 +22,9 @@ class Boss {
     if (hitChance >= 3) {
       let dmg = Math.round(Math.random() * 10) + this.dmg;
       player.hp -= dmg;
+      if (player.hp <= 0) {
+        player.hp = 0;
+      }
       let text = document.createElement("div");
       let body = document.querySelector("body");
       text.classList.add("boss-dmg-text");

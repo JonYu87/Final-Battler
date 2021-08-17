@@ -142,6 +142,9 @@ function attack() {
     let dmg = Math.round(Math.random() * 10) + player.dmg;
     //append div?
     boss.hp -= dmg;
+    if (boss.hp < 0) {
+      boss.hp = 0;
+    }
     let text = document.createElement("div");
     let body = document.querySelector("body");
     text.classList.add("dmg-text");
@@ -169,4 +172,10 @@ function attack() {
     boss.attack(player);
     bossAttAudio.play();
   }, 2000);
+}
+
+function gameOver(){
+  if (player.hp <= 0) {
+    alert("You died!");
+  }
 }
