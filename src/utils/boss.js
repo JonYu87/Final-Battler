@@ -6,9 +6,9 @@ class Boss {
       (this.y = 150),
       (this.width = 240),
       (this.height = 256),
-      (this.hp = 300),
+      (this.hp = 100),
       (this.mp = 9999),
-      (this.dmg = 20);
+      (this.dmg = 12);
     this.reset = this.reset.bind(this);
   }
 
@@ -39,9 +39,7 @@ class Boss {
       let text = document.createElement("div");
       let body = document.querySelector("body");
       text.classList.add("boss-miss-text");
-      text.append(
-        `Recursion missed! You have ${player.hp} hp remaining!`
-      );
+      text.append(`Recursion missed! You have ${player.hp} hp remaining!`);
       body.append(text);
       setTimeout(() => {
         text.remove();

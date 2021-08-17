@@ -192,6 +192,8 @@ function loseGameOver() {
   text.append(`Game Over! You have ${player.hp} hp left! `);
   body.append(text);
   lossAudio.play();
+  const button = document.querySelectorAll("button");
+  button.disabled = true;
 }
 function winGameOver() {
   let text = document.createElement("div");
@@ -199,4 +201,5 @@ function winGameOver() {
   text.classList.add("game-over");
   text.append(`You have defeated Recursion!`);
   body.append(text);
+  victoryAudio.play();
 }
