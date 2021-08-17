@@ -37,6 +37,12 @@ battleTheme.volume = 0.1;
 function togglePlay() {
   return battleTheme.paused ? battleTheme.play() : battleTheme.pause();
 }
+function togglePlaySecond() {
+  return battleTheme.paused ? battleTheme.play() : battleTheme.pause();
+}
+function togglePlayThird() {
+  return battleTheme.paused ? battleTheme.play() : battleTheme.pause();
+}
 
 const bossSprite = new Image();
 bossSprite.src = "./src/utils/assets/boss.gif";
