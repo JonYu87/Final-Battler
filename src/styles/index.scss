@@ -93,3 +93,18 @@
   background-color: greenyellow;
   border: 2px solid white;
 }
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 2;
+}

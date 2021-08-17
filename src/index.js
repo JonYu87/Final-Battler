@@ -98,6 +98,12 @@ attackAudio.src = "./src/utils/assets/attack.mp3";
 const bossAttAudio = new Audio();
 bossAttAudio.src = "./src/utils/assets/boss.mp3";
 
+const lossAudio = new Audio();
+lossAudio.src = "./src/utils/assets/loss.mp3";
+
+const victoryAudio = new Audio();
+victoryAudio.src = "./src/utils/assets/victory.mp3";
+
 document.addEventListener("DOMContentLoaded", (event) => {
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -172,10 +178,25 @@ function attack() {
     boss.attack(player);
     bossAttAudio.play();
   }, 2000);
+  if (boss.hp <= 0) {
+    winGameOver();
+  } else if (player.hp <= 0) {
+    loseGameOver();
+  }
 }
 
-function gameOver(){
-  if (player.hp <= 0) {
-    alert("You died!");
-  }
+function loseGameOver() {
+  let text = document.createElement("div");
+  let body = document.querySelector("body");
+  text.classList.add("game-over");
+  text.append(`Game Over! You have ${player.hp} hp left! `);
+  body.append(text);
+  lossAudio.play();
+}
+function winGameOver() {
+  let text = document.createElement("div");
+  let body = document.querySelector("body");
+  text.classList.add("game-over");
+  text.append(`You have defeated Recursion!`);
+  body.append(text);
 }
