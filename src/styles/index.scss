@@ -120,3 +120,32 @@
   text-align: center;
   z-index: 2;
 }
+
+.music{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  top: 20%;
+  left: 8%;
+}
+
+.music-button {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: blue;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.music-button:hover {
+  background-color:blue;
+}
+    
