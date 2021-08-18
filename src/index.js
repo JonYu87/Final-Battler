@@ -222,3 +222,5 @@ function winGameOver() {
   const button = document.getElementById("attackBtn");
   button.disabled = true;
 }
+
+export default {loseGameOver, winGameOver};

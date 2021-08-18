@@ -184,3 +184,64 @@
 #attackBtn:hover {
   border-color: black;
 }
+
+.instructions {
+  border: 3px solid black;
+  border-radius: 5px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 88%;
+  transform: translate(-50%, -50%);
+
+}
+
+.instructions-title{
+  font-size: 30px;
+  font-family: "Final Fantasy", sans-serif;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 21%;
+  left: 88%;
+  transform: translate(-50%, -50%);
+}
+
+#instructions-text {
+  font-family: "Final Fantasy", sans-serif;
+  height: 100%;
+  text-align: center;
+  color: white;
+  inline-size: 150px;
+  overflow-wrap: break-word;
+  font-size: 13px;
+  font-weight: bold;
+  
+  /* animation properties */
+  -moz-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  
+  -moz-animation: my-animation 10s linear infinite;
+  -webkit-animation: my-animation 10s linear infinite;
+  animation: my-animation 10s linear infinite;
+}
+
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateY(100%); }
+  to { -webkit-transform: translateY(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  to {
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
