@@ -46,6 +46,13 @@ class Boss {
       setTimeout(() => {
         text.remove();
       }, 2000);
+      if (this.hp <= 0) {
+        winGameOver();
+        button.disabled = true;
+      } else if (player.hp <= 0) {
+        loseGameOver();
+        button.disabled = true;
+      }
     }
     setTimeout(this.reset, 700);
   }

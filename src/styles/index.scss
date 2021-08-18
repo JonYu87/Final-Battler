@@ -108,10 +108,10 @@
 
 .game-over {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 800px;
   height: 200px;
   background-color: black;
   color: white;
@@ -119,15 +119,24 @@
   border-radius: 5px;
   text-align: center;
   z-index: 2;
+  font-size: 50px;
 }
 
-.music{
+.music {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: space-between;
   top: 20%;
-  left: 8%;
+  left: 5%;
+}
+
+.music p {
+  font-size: 15px;
+  font-family: "Final Fantasy", sans-serif;
+  color: white;
+  text-align: left;
+  margin-top: 10px;
 }
 
 .music-button {
@@ -146,6 +155,5 @@
 }
 
 .music-button:hover {
-  background-color:blue;
+  background-color: blue;
 }
-    

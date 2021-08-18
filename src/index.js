@@ -177,14 +177,16 @@ function attack() {
   }
   setTimeout(resetPlayer, 700);
   setTimeout(() => {
+    button.disabled = false;
     boss.attack(player);
     bossAttAudio.play();
   }, 2000);
-  button.disabled = false;
   if (boss.hp <= 0) {
     winGameOver();
+    button.disabled = true;
   } else if (player.hp <= 0) {
     loseGameOver();
+    button.disabled = true;
   }
 }
 

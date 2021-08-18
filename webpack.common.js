@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const outputDir = "./dist";
 
 module.exports = {
-  entry: path.resolve(__dirname, "src", "index.js"), 
+  entry: path.resolve(__dirname, "src", "index.js"),
   output: {
     path: path.join(__dirname, outputDir),
     filename: "[name].js",
@@ -12,19 +12,19 @@ module.exports = {
     wasmLoading: false,
   },
   resolve: {
-    extensions: [".js"], 
+    extensions: [".js"],
   },
   module: {
     rules: [
       {
-        test: /\.js$/, 
+        test: /\.js$/,
         use: {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
             plugins: ["@babel/plugin-proposal-optional-chaining"],
             exclude: /node_modules/,
-          }, 
+          },
         },
       },
       {
@@ -46,7 +46,6 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-           
               name: "[name].[ext]",
               outputPath: "images/",
               publicPath: "images/",
@@ -60,29 +59,31 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-          
               publicPath: "../",
             },
           },
           "css-loader",
           "resolve-url-loader",
           {
-            loader: "sass-loader", 
+            loader: "sass-loader",
             options: {
-              implementation: require('sass')
-            }
+              implementation: require("sass"),
+            },
           },
           "postcss-loader",
         ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: "file-loader",
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-    
       filename: "[name].css",
       chunkFilename: "[id].css",
-      ignoreOrder: false, 
+      ignoreOrder: false,
     }),
     require("autoprefixer"),
   ],
