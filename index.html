@@ -13,15 +13,18 @@
   <div class="game-container">
 
     <canvas id="field"></canvas>
-    <a onClick="togglePlay()">
-      <button>Battle Theme</button>
-    </a>
-    <a onClick="togglePlaySecond()">
-      <button>Fight On!</button>
-    </a>
-    <a onClick="togglePlayThird()">
-      <button>Jenova Absolute</button>
-    </a>
+    <div class="music">
+
+      <a onClick="togglePlay()">
+        <button>Battle Theme</button>
+      </a>
+      <a onClick="togglePlaySecond()">
+        <button>Fight On!</button>
+      </a>
+      <a onClick="togglePlayThird()">
+        <button>Jenova Absolute</button>
+      </a>
+    </div>
     <audio id="theme-music-1" src="./src/utils/assets/battleTheme.mp3" type="audio/mpeg" autoplay"></audio>
     <audio id="theme-music-2" src="./src/utils/assets/fightOn.mp3" type="audio/mpeg" autoplay"></audio>
     <audio id="theme-music-3" src="./src/utils/assets/jenovaAbsolute.mp3" type="audio/mpeg" autoplay"></audio>

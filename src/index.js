@@ -34,11 +34,11 @@ const deadTerra = {
 };
 
 let battleTheme = document.getElementById("theme-music-1");
-battleTheme.volume = 0.1;
+battleTheme.volume = 0.3;
 let fightOn = document.getElementById("theme-music-2");
-fightOn.volume = 0.1;
+fightOn.volume = 0.3;
 let jenovaAbsolute = document.getElementById("theme-music-3");
-jenovaAbsolute.volume = 0.1;
+jenovaAbsolute.volume = 0.3;
 
 function togglePlay() {
   if (battleTheme.paused) {
@@ -175,9 +175,12 @@ function attack() {
   }
   setTimeout(resetPlayer, 700);
   setTimeout(() => {
+    const button = document.getElementById("attackBtn");
+    button.disabled = true;
     boss.attack(player);
     bossAttAudio.play();
   }, 2000);
+  button.disabled = false;
   if (boss.hp <= 0) {
     winGameOver();
   } else if (player.hp <= 0) {
@@ -198,7 +201,7 @@ function loseGameOver() {
   jenovaAbsolute.currentTime = 0;
   jenovaAbsolute.pause();
   lossAudio.play();
-  const button = document.querySelectorAll("button");
+  const button = document.getElementById("attackBtn");
   button.disabled = true;
 }
 function winGameOver() {
@@ -214,4 +217,6 @@ function winGameOver() {
   jenovaAbsolute.currentTime = 0;
   jenovaAbsolute.pause();
   victoryAudio.play();
+  const button = document.getElementById("attackBtn");
+  button.disabled = true;
 }
