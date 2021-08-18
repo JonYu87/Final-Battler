@@ -194,7 +194,7 @@ function loseGameOver() {
   let text = document.createElement("div");
   let body = document.querySelector(".game-container");
   text.classList.add("game-over");
-  text.append(`Game Over! You have ${player.hp} hp left! `);
+  text.append(`Game Over! You have ${player.hp} hp left!`);
   body.append(text);
   battleTheme.currentTime = 0;
   battleTheme.pause();
