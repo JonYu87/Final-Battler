@@ -28,7 +28,7 @@ class Boss {
         player.hp = 0;
       }
       let text = document.createElement("div");
-      let body = document.querySelector("body");
+      let body = document.querySelector(".game-container");
       text.classList.add("boss-dmg-text");
       text.append(
         `Recursion dealt ${dmg} to you, you have ${player.hp} hp remaining!`
@@ -39,7 +39,7 @@ class Boss {
       }, 2000);
     } else {
       let text = document.createElement("div");
-      let body = document.querySelector("body");
+      let body = document.querySelector(".game-container");
       text.classList.add("boss-miss-text");
       text.append(`Recursion missed! You have ${player.hp} hp remaining!`);
       body.append(text);

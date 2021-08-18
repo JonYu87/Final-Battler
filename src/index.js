@@ -154,7 +154,7 @@ function attack() {
       boss.hp = 0;
     }
     let text = document.createElement("div");
-    let body = document.querySelector("body");
+    let body = document.querySelector(".game-container");
     text.classList.add("dmg-text");
     text.append(
       `You dealt ${dmg} dmg to Recursion, Recursion now has ${boss.hp} hp! `
@@ -165,7 +165,7 @@ function attack() {
     }, 2000);
   } else {
     let text = document.createElement("div");
-    let body = document.querySelector("body");
+    let body = document.querySelector(".game-container");
     text.classList.add("miss-text");
     text.append(
       `You missed! You dealt 0 dmg to the boss, the boss now has ${boss.hp} hp! `
@@ -190,7 +190,7 @@ function attack() {
 
 function loseGameOver() {
   let text = document.createElement("div");
-  let body = document.querySelector("body");
+  let body = document.querySelector(".game-container");
   text.classList.add("game-over");
   text.append(`Game Over! You have ${player.hp} hp left! `);
   body.append(text);
@@ -206,7 +206,7 @@ function loseGameOver() {
 }
 function winGameOver() {
   let text = document.createElement("div");
-  let body = document.querySelector("body");
+  let body = document.querySelector(".game-container");
   text.classList.add("game-over");
   text.append(`You have defeated Recursion!`);
   body.append(text);
