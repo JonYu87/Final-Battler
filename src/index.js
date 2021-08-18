@@ -143,6 +143,8 @@ function resetPlayer() {
 function attack() {
   player.x = 600;
   attackAudio.play();
+  const button = document.getElementById("attackBtn");
+  button.disabled = true;
   let hitChance = Math.round(Math.random() * 10);
   if (hitChance >= 4) {
     let dmg = Math.round(Math.random() * 10) + player.dmg;
@@ -175,8 +177,6 @@ function attack() {
   }
   setTimeout(resetPlayer, 700);
   setTimeout(() => {
-    const button = document.getElementById("attackBtn");
-    button.disabled = true;
     boss.attack(player);
     bossAttAudio.play();
   }, 2000);
